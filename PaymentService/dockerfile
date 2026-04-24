@@ -1,0 +1,21 @@
+﻿FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+
+COPY PaymentService/PaymentService.csproj PaymentService/
+COPY Payment.ApplicationLayer/Payment.ApplicationLayer.csproj Payment.ApplicationLayer/
+COPY Payment.DomainLayer/Payment.DomainLayer.csproj Payment.DomainLayer/
+COPY Payment.Infrastructure/Payment.Infrastructure.csproj Payment.Infrastructure/
+
+RUN dotnet restore PaymentService/PaymentService.csproj
+
+COPY . .
+
+WORKDIR /src/PaymentService
+RUN dotnet publish -c Release -o /app/publish
+
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
+WORKDIR /app
+
+COPY --from=build /app/publish .
+
+ENTRYPOINT ["dotnet", "PaymentService.dll"]

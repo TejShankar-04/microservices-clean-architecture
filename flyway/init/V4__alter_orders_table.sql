@@ -1,0 +1,5 @@
+USE orderdb;
+
+ALTER TABLE Orders
+ADD OrderId INT NOT NULL DEFAULT 0,
+    ItemNo NVARCHAR(50) NOT NULL DEFAULT '';

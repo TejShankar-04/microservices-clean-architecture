@@ -1,0 +1,23 @@
+<Solution>
+  <Folder Name="/flyway/" />
+  <Folder Name="/flyway/init/">
+    <File Path="flyway/init/V2__create_orders_table.sql" />
+    <File Path="flyway/init/V3__create_payment_table.sql" />
+    <File Path="V1__create_databases.sql" />
+    <File Path="V4__alter_orders_table.sql" />
+    <File Path="V5__alter_orders_table.sql" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path="docker-compose.yml" />
+    <File Path="init.sql" />
+  </Folder>
+  <Project Path="ApplicaicationLayer/ApplicaicationLayer.csproj" />
+  <Project Path="DomainLayer/DomainLayer.csproj" />
+  <Project Path="OrderService.Infrastructure/OrderService.Infrastructure.csproj" />
+  <Project Path="OrderService.Tests/OrderService.Tests.csproj" />
+  <Project Path="OrderService/OrderService.csproj" />
+  <Project Path="Payment.ApplicationLayer/Payment.ApplicationLayer.csproj" Id="e1103b99-0fb5-4ae1-99ff-6c5aba51ddb6" />
+  <Project Path="Payment.DomainLayer/Payment.DomainLayer.csproj" Id="d6b4db72-4c2c-449b-b88f-3d5fa1d17b7e" />
+  <Project Path="Payment.Infrastructure/Payment.Infrastructure.csproj" Id="d3c663a5-4b1e-4c49-9dd2-0cc94c915abb" />
+  <Project Path="PaymentService/PaymentService.csproj" Id="dc44dc4a-c8fe-42b0-8d94-613e19c151e1" />
+</Solution>

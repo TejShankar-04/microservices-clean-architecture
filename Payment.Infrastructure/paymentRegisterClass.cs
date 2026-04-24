@@ -1,0 +1,23 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Payment.ApplicationLayer.Interfaces;
+using Payment.Infrastructure.Repository;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Payment.Infrastructure
+{
+    public static class paymentRegisterClass
+    {
+        public static void AddPaymentInfra(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddDbContext<PaymentDbClass>(Options => Options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<IPaymentCreate,PaymentCreate>();
+            services.AddScoped <IPaymrntProcess,PaymentProcess>();
+        }
+    }
+}
